@@ -1,0 +1,46 @@
+﻿{% extends 'base.html' %}
+{% block content %}
+    <div id="main-container" class="container clearfix">
+        <section class="post-left">
+            <div class="breadcrumb">您的位置： <a itemprop="breadcrumb" href="{% url 'myapp:index' %}">首页</a> » <span class="current">关于我们</span>
+            </div>
+            <div class="post-main clearfix">
+                <h1 class="post-title">关于我们</h1>
+                <div class="post-con clearfix">
+                    <div class="article-meta"> <span class="item">
+                        <div id="linkweb"></div>
+<script>setInterval("linkweb.innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());",1000);</script>
+                    </span></div>
+                    <article class="article-content">
+                        <p>about me</p>
+                    </article>
+                </div>
+            </div>
+            <!-- /文章 -->
+        </section>
+        <!-- /post-left -->
+        <!-- /post-right -->
+        <aside class="post-right hidden-xs">
+            <!-- /关注我们 -->
+            
+            <div class="post-right-item">
+                <h4 class="post-right-title">关注我</h4>
+                <div class="wid-about">
+                    <p>欢迎关注！</p>
+                    <img src="{% url 'myapp:index' %}static/picture/weixinqr.jpg" width="160" height="160" alt="">
+                </div>
+                <div class="wid-about">
+                    <p><strong>联系方式:</strong></p>
+                    <p><a href="tencent://message/?uin=2914283700&amp;Menu=yes">
+        在线联系客服小旗子
+    </a></p>
+                    <p>Email：2914283700@qq.com</p>
+                </div>
+            </div>
+
+
+        </aside>
+    </div>
+
+
+{% endblock %}

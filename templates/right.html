@@ -1,0 +1,52 @@
+{% load staticfiles %}
+<aside class="post-right hidden-xs">
+    <section class="widget post-right-item">
+        <h4 class="post-right-title">猜你喜欢</h4>
+        <ul class="post-hot clearfix">
+            {% for recom in recommend %}
+                <li>
+                    <div class="img">
+                        <a href="{% url 'myapp:index' %}show-{{ recom.id }}.html" title="{{ recom.title }}"><img
+                                src="{% url 'myapp:index' %}media/{{ recom.img }}"
+                                srcset="{% url 'myapp:index' %}media/{{ recom.img }}" alt="" class="wp-post-image"
+                                width="120"
+                                height="80"/></a>
+                    </div>
+                    <a href="{% url 'myapp:index' %}show-{{ recom.id }}.html" title="{{ recom.title }}" target="_blank"
+                       class="title">{{ recom.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+    <section class="widget post-right-item">
+        <h4 class="post-right-title">旅游攻略</h4>
+        <div class="tags">
+            {% for tag in alltag1 %}
+                <a href="{% url 'myapp:index' %}tag/{{ tag.name }}">{{ tag.name }}</a>
+            {% endfor %}
+            <div id="showdiv" style="display:none;">
+                {% for tag in alltag2 %}
+                    <a href="{% url 'myapp:index' %}tag/{{ tag.name }}">{{ tag.name }}</a>
+                {% endfor %}
+            </div>
+            <a href="#" onclick="showHideCode()">更多</a>
+        </div>
+    </section>
+    <!-- /关注我们 -->
+    <div class="post-right-item">
+        <h4 class="post-right-title">关注我</h4>
+        <div class="wid-about">
+            <p>欢迎关注！</p>
+            <img src="{% static "picture/weixinqr.jpg" %}" alt="微信二维码" width="160" height="160">
+        </div>
+        <div class="wid-about">
+            <p><strong>联系方式:</strong></p>
+            <p><a href="tencent://message/?uin=2914283700&amp;Menu=yes">
+                在线联系客服小旗子
+            </a></p>
+            <p>Email：2914283700@qq.com</p>
+        </div>
+    </div>
+
+
+</aside>

@@ -1,2 +1,3 @@
 # wiDjango
-Simple travel company website.
+一个简单的旅游公司网站
+素材来源网络，侵权删
